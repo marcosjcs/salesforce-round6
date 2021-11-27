@@ -1,5 +1,5 @@
 // criar uma única trigger para cada objeto
-// Versão 1: forma sem Orientação a Objeto 
+// Versão 2: um pouco de refatoração
 
 trigger JogadoresTrigger on Jogador__c (before update) {
 
@@ -8,10 +8,14 @@ trigger JogadoresTrigger on Jogador__c (before update) {
       for (Jogador__c jogador : Trigger.new) {
         Jogador__c jogadorOld = Trigger.oldMap.get(jogador.Id);
 
-        if (!jogadorOld.Eliminado__c && jogador.Eliminado__c) {
-          jogador.DataMorte__c = System.now();
-        }
+        handleMorte(jogador, jogadorOld);
       }
+    }
+  }
+
+  static void handleMorte(Jogador__c jogador, Jogador__c jogadorOld) {
+    if (!jogadorOld.Eliminado__c && jogador.Eliminado__c) {
+      jogador.DataMorte__c = System.now();
     }
   }
 
