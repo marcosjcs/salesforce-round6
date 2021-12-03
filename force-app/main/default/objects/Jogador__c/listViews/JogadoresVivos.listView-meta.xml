@@ -4,9 +4,11 @@
     <columns>NAME</columns>
     <columns>Candidato__c</columns>
     <columns>Round__c</columns>
+    <columns>Eliminado__c</columns>
+    <columns>Morreu__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
-        <field>Eliminado__c</field>
+        <field>Morreu__c</field>
         <operation>equals</operation>
         <value>0</value>
     </filters>
