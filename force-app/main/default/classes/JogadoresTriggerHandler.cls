@@ -18,19 +18,15 @@ public without sharing class JogadoresTriggerHandler {
     return value != valueToCompare;
   }
 
-  private static void setValue(Jogador__c record, Schema.SObjectField field, Object value) {
-    record.put(field, value);
-  }
-
   private static void handleEliminacaoMorte(Jogador__c record, Jogador__c recordOld) {
 
     if (ehJogadorPadrao(record) && foiEliminado(record, recordOld)) {
-      setValue(record, Jogador__c.Morreu__c, true);
+      Utils.setValue(record, Jogador__c.Morreu__c, true);
     }
 
     if (morreu(record, recordOld)) {
-      setValue(record, Jogador__c.DataMorte__c, System.now());
-      setValue(record, Jogador__c.Eliminado__c, true);
+      Utils.setValue(record, Jogador__c.DataMorte__c, System.now());
+      Utils.setValue(record, Jogador__c.Eliminado__c, true);
     }
   }
 
