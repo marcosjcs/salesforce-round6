@@ -48,13 +48,19 @@ public without sharing class RoundsTriggerHandler {
       }
     }
 
-    Integer qtdJogadoresValidos = (jogadoresRound.size() - qtdMembroStaff);
-
-    return (qtdJogadoresValidos > 0) ? premio/qtdJogadoresValidos : 0;
+    return calculaPremioUnitarioReal(premio, jogadoresRound.size(), qtdMembroStaff);
   }
 
   private static Boolean isMembroStaff(String recordTypeDeveloperName) {
     return recordTypeDeveloperName.equals(Label.RECORD_TYPE_DEVELOPER_NAME_MEMBRO_STAFF);
+  }
+
+  private static Decimal calculaPremioUnitarioReal(Decimal premio, Integer qtdJogadores, Integer qtdMembroStaff) {
+    Decimal premioUnitario = premio/qtdJogadores;
+    Decimal premioNaoConsiderandoStaff = premio - (premioUnitario*qtdMembroStaff);
+    Decimal qtdJogadoresValidos = qtdJogadores - qtdMembroStaff;
+
+    return premioNaoConsiderandoStaff/qtdJogadoresValidos;
   }
 
 }
