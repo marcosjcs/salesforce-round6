@@ -112,17 +112,4 @@ export default class JogarContainer extends LightningElement {
     ];
   }
 
-  get maioresAssassinos() {
-    if (this.roundSelecionadoCerto) {
-      const maiorQuantidadeAssssinatos = this.roundSelecionadoCerto.Jogadores__r.reduce(
-        (max, jogador) => jogador.QuantidadeAssassinatos__c > max ? jogador.QuantidadeAssassinatos__c : max, 0
-      );
-      
-      return this.roundSelecionadoCerto.Jogadores__r.filter(
-        (jogador) => jogador.QuantidadeAssassinatos__c == maiorQuantidadeAssssinatos
-      );
-    }
-    return;
-  }
-
 }
