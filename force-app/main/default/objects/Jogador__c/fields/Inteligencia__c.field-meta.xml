@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Inteligencia__c</fullName>
     <defaultValue>1</defaultValue>
-    <description>Inteligência</description>
     <externalId>false</externalId>
     <label>Inteligência</label>
     <precision>3</precision>

@@ -141,34 +141,28 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>Jogadores</compactLayoutAssignment>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>Jogador participante do jogo</description>
-    <enableActivities>false</enableActivities>
-    <enableBulkApi>false</enableBulkApi>
-    <enableFeeds>true</enableFeeds>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
-    <enableSharing>false</enableSharing>
-    <enableStreamingApi>false</enableStreamingApi>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <gender>Masculine</gender>
-    <label>Jogador</label>
+    <label>Assassinato</label>
     <nameField>
-        <displayFormat>{000}</displayFormat>
-        <label>Número do Jogador</label>
-        <trackFeedHistory>false</trackFeedHistory>
+        <displayFormat>{0}</displayFormat>
+        <label>Número do assassinato</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Jogadores</pluralLabel>
-    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
-    <recordTypeTrackHistory>false</recordTypeTrackHistory>
-    <searchLayouts>
-        <massQuickActions>Eliminar</massQuickActions>
-    </searchLayouts>
+    <pluralLabel>Assassinatos</pluralLabel>
+    <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

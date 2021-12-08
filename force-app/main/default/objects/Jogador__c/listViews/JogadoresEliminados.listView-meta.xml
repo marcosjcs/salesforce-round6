@@ -3,7 +3,9 @@
     <fullName>JogadoresEliminados</fullName>
     <columns>NAME</columns>
     <columns>Candidato__c</columns>
+    <columns>MembroStaff__c</columns>
     <columns>Eliminado__c</columns>
+    <columns>ValorPagar__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>Eliminado__c</field>

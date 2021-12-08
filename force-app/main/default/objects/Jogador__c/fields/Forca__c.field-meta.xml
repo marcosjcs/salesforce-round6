@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Forca__c</fullName>
     <defaultValue>1</defaultValue>
-    <description>Força</description>
     <externalId>false</externalId>
     <label>Força</label>
     <precision>3</precision>
