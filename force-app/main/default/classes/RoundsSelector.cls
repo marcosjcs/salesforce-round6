@@ -47,7 +47,8 @@ public without sharing class RoundsSelector {
                 (SELECT 
                     Id, Name, QuantidadeAssassinatos__c, Candidato__r.Name, Morreu__c, Forca__c, Velocidade__c, Inteligencia__c
                     FROM Jogadores__r 
-                    WHERE RecordTypeId = :Schema.SObjectType.Jogador__c.getRecordTypeInfosByDeveloperName().get(Label.RECORD_TYPE_DEVELOPER_NAME_JOGADOR_PADRAO).getRecordTypeId())
+                    WHERE RecordTypeId = :Schema.SObjectType.Jogador__c.getRecordTypeInfosByDeveloperName().get(Label.RECORD_TYPE_DEVELOPER_NAME_JOGADOR_PADRAO).getRecordTypeId()
+                    ORDER BY Name)
             FROM Round__c
             WHERE Status__c = 'Em Andamento'
         ];

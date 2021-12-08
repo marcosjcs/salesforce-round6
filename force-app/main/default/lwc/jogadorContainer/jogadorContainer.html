@@ -3,10 +3,26 @@
     class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_12-of-12 slds-p-bottom_small"
   >
     <lightning-card class={vivoMortoClass}>
-      <h3 slot="title">{jogador.Name}</h3>
-      <p class="slds-p-horizontal_small">{jogador.Candidato__r.Name}</p>
+      <h3 slot="title">{jogador.Name} - {jogador.Candidato__r.Name}</h3>
+      <div> 
+        <c-atributo-container
+          atributo-label="Inteligência"
+          atributo-value={jogador.Inteligencia__c}
+          atributo-color="blueviolet"
+        ></c-atributo-container>
+        <c-atributo-container
+          atributo-label="Velocidade"
+          atributo-value={jogador.Velocidade__c}
+          atributo-color="dodgerblue"
+        ></c-atributo-container>
+        <c-atributo-container
+          atributo-label="Força"
+          atributo-value={jogador.Forca__c}
+          atributo-color="crimson"
+        ></c-atributo-container>
+      </div>
       <p slot="footer">
-        <span class="slds-badge assassinou">Assassinatos cometidos: {jogador.QuantidadeAssassinatos__c}</span>
+        <span class="slds-badge assassinou">Assassinatos: {jogador.QuantidadeAssassinatos__c}</span>
       </p>
     </lightning-card>
   </div>
