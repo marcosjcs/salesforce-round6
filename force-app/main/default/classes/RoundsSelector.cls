@@ -43,14 +43,14 @@ public without sharing class RoundsSelector {
     public static List<Round__c> selectAllRoundsWithJogadoresNaoEliminados() {
         return [
             SELECT 
-                Id, Name, Vencedor__c, PremioTotal__c, TotalJogadoresEliminados__c,
+                Id, Name, Status__c, Vencedor__r.Nick__c, PremioTotal__c, TotalJogadoresEliminados__c,
                 (SELECT 
                     Id, Name, QuantidadeAssassinatos__c, Candidato__r.Name, Morreu__c, Forca__c, Velocidade__c, Inteligencia__c
                     FROM Jogadores__r 
                     WHERE RecordTypeId = :Schema.SObjectType.Jogador__c.getRecordTypeInfosByDeveloperName().get(Label.RECORD_TYPE_DEVELOPER_NAME_JOGADOR_PADRAO).getRecordTypeId()
                     ORDER BY Name)
             FROM Round__c
-            WHERE Status__c = 'Em Andamento'
+            WHERE Status__c IN ('Em Andamento','Finalizado')
         ];
     }
 

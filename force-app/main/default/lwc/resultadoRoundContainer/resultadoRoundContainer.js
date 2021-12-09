@@ -3,6 +3,13 @@ import { LightningElement, api } from "lwc";
 export default class ResultadoRoundContainer extends LightningElement {
   @api resultadoRound;
 
+  get jogadorVencedor() {
+    if (this.resultadoRound) {
+      return this.resultadoRound.Status__c == 'Finalizado' ? "Vencedor: " + this.resultadoRound.Vencedor__r.Nick__c : 'Round Em Andamento';
+    }
+    return;
+  }
+
   get totalJogadoresEliminados() {
     if (this.resultadoRound) {
       return "Total Eliminados: " + this.resultadoRound.TotalJogadoresEliminados__c;
