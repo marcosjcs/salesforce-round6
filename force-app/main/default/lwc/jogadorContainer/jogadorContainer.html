@@ -4,22 +4,14 @@
   >
     <lightning-card class={vivoMortoClass}>
       <h3 slot="title">{jogador.Name} - {jogador.Candidato__r.Name}</h3>
-      <div> 
-        <c-atributo-container
-          atributo-label="Inteligência"
-          atributo-value={jogador.Inteligencia__c}
-          atributo-color="blueviolet"
-        ></c-atributo-container>
-        <c-atributo-container
-          atributo-label="Velocidade"
-          atributo-value={jogador.Velocidade__c}
-          atributo-color="dodgerblue"
-        ></c-atributo-container>
-        <c-atributo-container
-          atributo-label="Força"
-          atributo-value={jogador.Forca__c}
-          atributo-color="crimson"
-        ></c-atributo-container>
+      <div>
+        <template for:each={atributos} for:item="atributo">
+          <c-atributo-container key={atributo.label}
+            atributo-label={atributo.label}
+            atributo-value={atributo.value}
+            atributo-color={atributo.color}
+          ></c-atributo-container>
+        </template>
       </div>
       <p slot="footer">
         <span class="slds-badge assassinou">Assassinatos: {jogador.QuantidadeAssassinatos__c}</span>

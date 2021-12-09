@@ -25,13 +25,11 @@ export default class ResultadoRoundContainer extends LightningElement {
   }
 
   get maioresAssassinos() {
-    if (this.resultadoRound) {
-      const maiorQuantidadeAssssinatos = this.resultadoRound.Jogadores__r.reduce(
-        (max, jogador) => jogador.QuantidadeAssassinatos__c > max ? jogador.QuantidadeAssassinatos__c : max, 0
-      );
-      
+    if (this.resultadoRound) {    
       return this.resultadoRound.Jogadores__r.filter(
-        (jogador) => jogador.QuantidadeAssassinatos__c == maiorQuantidadeAssssinatos
+        (jogador) => jogador.QuantidadeAssassinatos__c == this.resultadoRound.Jogadores__r.reduce(
+          (max, jogador) => jogador.QuantidadeAssassinatos__c > max ? jogador.QuantidadeAssassinatos__c : max, 0
+        )
       );
     }
     return;
