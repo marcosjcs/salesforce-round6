@@ -6,10 +6,9 @@
       <h3 slot="title">{jogador.Name} - {jogador.Candidato__r.Name}</h3>
       <div>
         <template for:each={atributos} for:item="atributo">
-          <c-atributo-container key={atributo.label}
-            atributo-label={atributo.label}
-            atributo-value={atributo.value}
-            atributo-color={atributo.color}
+          <c-atributo-container 
+           key={atributo.label}
+           atributo={atributo}
           ></c-atributo-container>
         </template>
       </div>
